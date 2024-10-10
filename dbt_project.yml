@@ -41,6 +41,4 @@ models:
 
 vars:
   schema_name: 'student'
-  product_dim_table: 'product_dim'
-  product_inc_table: 'product_dim'
   raw_sales: 'sales_raw'
