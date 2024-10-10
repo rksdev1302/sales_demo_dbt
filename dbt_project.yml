@@ -33,4 +33,14 @@ models:
   demo_project:
     # Config indicated by + and applies to all files under models/example/
     example:
-      +materialized: view
+      database: student
+    dim:
+      database: student
+    inc:
+      database: student
+
+vars:
+  schema_name: 'student'
+  product_dim_table: 'product_dim'
+  product_inc_table: 'product_dim'
+  raw_sales: 'sales_raw'
