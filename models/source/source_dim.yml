@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: demo_dim
+    database: demo_dim
+    schema: demo_dim
+    tables:
+      - name: address_dim
+      - name: date_dim
+      - name: order_dim
+      - name: shipment_dim
+      - name: value_dim
+      - name: product_dim
+
