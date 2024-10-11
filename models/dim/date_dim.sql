@@ -1,6 +1,6 @@
 {{ config(
-    materialized='incremental',
-    unique_key='id',
+    materialized='table',
+    unique_key='date_id',
     name='date_dim'
 ) }}
 
@@ -24,7 +24,7 @@ WITH date_data AS (
 )
 
 SELECT
-    ROW_NUMBER() OVER (ORDER BY order_date) AS id,
+    ROW_NUMBER() OVER (ORDER BY order_date) AS date_id,
     order_date,
     date_only,
     year,
