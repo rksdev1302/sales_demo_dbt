@@ -32,13 +32,26 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   demo_project:
     # Config indicated by + and applies to all files under models/example/
-    example:
-      database: student
+    fact:
+      database: demo_fact
     dim:
-      database: student
+      database: demo_dim
     inc:
-      database: student
+      database: demo_inc
 
 vars:
-  schema_name: 'student'
-  raw_sales: 'sales_raw'
+
+  schema_name_inc: 'demo_inc'
+  schema_name_dim: 'demo_dim'
+  schema_name_raw: 'demo_raw'
+
+  sales_raw: 'sales_raw'
+  sales_data_clean_inc : 'sales_data_clean_inc'
+
+  address_dim: 'address_dim'
+  date_dim: 'date_dim'
+  order_dim: 'order_dim'
+  shipment_dim: 'shipment_dim'
+  value_dim: 'value_dim'
+  product_dim: 'product_dim'
+

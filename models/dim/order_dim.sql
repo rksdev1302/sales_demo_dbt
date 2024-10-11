@@ -1,18 +1,17 @@
 {{ config(
     materialized='incremental',
     unique_key='id',
-    name='product_dim'
+    name='order_dim'
 ) }}
 
 
     SELECT
         id,
         order_id,
-        SKU,
-        ASIN,
-        Style,
-        Category,
-        Size
+        order_date,
+        Status,
+        promotion_ids,
+        B2B
     FROM {{ source(var('schema_name_inc'), var('sales_data_clean_inc')) }}
     {% if is_incremental() %}
       WHERE id > (SELECT MAX(id) FROM {{ this }})

@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: demo_inc
+    database: demo_inc
+    schema: demo_inc
+    tables:
+      - name: sales_data_clean_inc
+        description: "sales_data_clean_inc"

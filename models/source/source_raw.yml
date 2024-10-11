@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: demo_raw
+    database: demo_raw
+    schema: demo_raw
+    tables:
+      - name: sales_raw
+
