@@ -6,8 +6,18 @@ The goal is to transform raw sales data into meaningful fact and dimension table
 Project Overview
 This project involves creating a star schema for Amazon sales data to support data analysis and business intelligence. The schema includes:
 
-Fact table: daily_sales_fact ,city_sales_fact 
-Dimension tables: address_dim,date_dim,order_dim,product_dim,shipment_dim,value_dim
+Fact table: 
+1.daily_sales_fact
+2.city_sales_fact 
+
+Dimension tables: 
+1.address_dim
+2.date_dim
+3.order_dim
+4.product_dim
+5.shipment_dim
+6.value_dim
+
 Incremental Cleaned Data : sales_data_clean_inc
 
 Tech Stack
