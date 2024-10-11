@@ -11,7 +11,10 @@
         order_date,
         Status,
         promotion_ids,
-        B2B
+        B2B,
+        Qty,
+        currency,
+        Amount
     FROM {{ source(var('schema_name_inc'), var('sales_data_clean_inc')) }}
     {% if is_incremental() %}
       WHERE id > (SELECT MAX(id) FROM {{ this }})

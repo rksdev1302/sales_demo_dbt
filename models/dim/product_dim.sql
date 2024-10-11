@@ -1,19 +1,23 @@
 {{ config(
-    materialized='incremental',
-    unique_key='id',
+    materialized='table',
+    unique_key='product_id',
     name='product_dim'
 ) }}
 
 
+    select SKU,
+        ASIN,
+        Style,
+        Category,
+        Size,
+        row_number() over ( order by SKU asc,ASIN asc) as product_id
+        from (
     SELECT
-        id,
-        order_id,
+        distinct
         SKU,
         ASIN,
         Style,
         Category,
         Size
-    FROM {{ source(var('schema_name_inc'), var('sales_data_clean_inc')) }}
-    {% if is_incremental() %}
-      WHERE id > (SELECT MAX(id) FROM {{ this }})
-    {% endif %}
+        from {{ source(var('schema_name_inc'), var('sales_data_clean_inc')) }}
+        )t
