@@ -1,9 +1,0 @@
-version: 2
-
-sources:
-  - name: student
-    database: student
-    schema: student
-    tables:
-      - name: sales_raw
-        description: "raw_sales_data"

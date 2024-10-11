@@ -1,7 +1,6 @@
 {{ config(
     materialized='table',
-    name='daily_sales_fact',
-    unique_key='order_id'
+    name='daily_sales_fact'
 ) }}
 
 WITH sales_data AS (

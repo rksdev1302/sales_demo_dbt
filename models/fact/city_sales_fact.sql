@@ -1,7 +1,6 @@
 {{ config(
     materialized='table',
-    name='city_sales_fact',
-    unique_key='order_id'
+    name='city_sales_fact'
 ) }}
 
 
